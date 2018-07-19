@@ -5,9 +5,10 @@ import './index.css';
 
 class Square extends React.Component {
   render() {
+    let self = this;
     return (
-      <button className="square">
-        {/* TODO */}
+      <button className="square" onClick={() => alert('clicked '+self.props.value) }}>
+        {this.props.value}
       </button>
     );
   }
@@ -15,7 +16,7 @@ class Square extends React.Component {
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={i} />;
   }
 
   render() {
